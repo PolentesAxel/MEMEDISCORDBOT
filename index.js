@@ -36,7 +36,7 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
-    if (msg.content === '%okplay') {
+    if (msg.content === 'µokboomer') {
           msg.member.voiceChannel.join().then(connection => {
           const dispatcher = connection.playFile('ok.mp3')
           dispatcher.on('end', end => msg.member.voiceChannel.leave());
@@ -45,7 +45,7 @@ client.on('message', msg => {
     })
 
     client.on('message', msg => {
-      if (msg.content === '%okdejoin') {
+      if (msg.content === 'µdejoin') {
         if (msg.member.voiceChannel) {
           msg.member.voiceChannel.leave()
         } else {
