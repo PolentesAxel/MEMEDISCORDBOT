@@ -3,11 +3,7 @@ const client = new Discord.Client()
 var opus = require('opusscript');
 let request = require(`request`);
 let fs = require(`fs`);
-function download(url){
-    request.get(url)
-        .on('error', console.error)
-        .pipe(fs.createWriteStream('ok.mp3'));
-}
+
 
 
 client.on('ready', () => {
@@ -38,7 +34,7 @@ client.on('message', msg => {
 client.on('message', msg => {
     if (msg.content === 'µokboomer') {
           msg.member.voiceChannel.join().then(connection => {
-          const dispatcher = connection.playFile('ok.mp3')
+          const dispatcher = connection.playFile('music\ok.mp3')
           dispatcher.on('end', end => msg.member.voiceChannel.leave());
         }).catch(err => console.log(err))
       }
