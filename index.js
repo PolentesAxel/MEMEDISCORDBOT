@@ -16,13 +16,13 @@ client.on('ready', () => {
   })
 
 client.on('message', msg => {
-  if (msg.content === '%oktest') {
+  if (msg.content === 'µmemetest') {
     msg.reply('Je fonctionne')
   }
 })
 
 client.on('message', msg => {
-  if (msg.content === '%okjoin') {
+  if (msg.content === 'µjoin') {
     if (msg.member.voiceChannel) {
       msg.member.voiceChannel.join()
         .then(connection => { // Connection is an instance of VoiceConnection
@@ -54,15 +54,5 @@ client.on('message', msg => {
       }
     });
 
-    client.on('message', msg => {
-      if(msg.attachments.first()){//checks if an attachment is sent
-        console.log("Fichier trouve")  
-        if(msg.attachments.first().filename === `ok.mp3`){//Download only png (customize this)
-          console.log("Telechargement")  
-              download(msg.attachments.first().url);//Function I will show later
-              console.log("Telechargement fini") 
-          }
-      }
-  });
 
 client.login(process.env.BOT_TOKEN)
