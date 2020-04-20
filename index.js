@@ -12,13 +12,13 @@ client.on('ready', () => {
   })
 
 client.on('message', msg => {
-  if (msg.content === 'µmemetest') {
+  if (msg.content === '_memetest') {
     msg.reply('Je fonctionne')
   }
 })
 
 client.on('message', msg => {
-  if (msg.content === 'µjoin') {
+  if (msg.content === '_join') {
     if (msg.member.voiceChannel) {
       msg.member.voiceChannel.join()
         .then(connection => { // Connection is an instance of VoiceConnection
@@ -32,7 +32,7 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
-    if (msg.content === 'µokboomer') {
+    if (msg.content === '_okboomer') {
           msg.member.voiceChannel.join().then(connection => {
           const dispatcher = connection.playFile('music\ok.mp3')
           dispatcher.on('end', end => msg.member.voiceChannel.leave());
@@ -41,7 +41,7 @@ client.on('message', msg => {
     })
 
     client.on('message', msg => {
-      if (msg.content === 'µdejoin') {
+      if (msg.content === '_dejoin') {
         if (msg.member.voiceChannel) {
           msg.member.voiceChannel.leave()
         } else {
