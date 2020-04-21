@@ -36,7 +36,11 @@ client.on('message', msg => {
           msg.member.voiceChannel.join().then(connection => {
           const dispatcher = connection.playFile('music/ok.mp3')
           dispatcher.on('end', end => msg.member.voiceChannel.leave());
-        }).catch(err => console.log(err))
+          } 
+           )else {
+              msg.reply('Pas sur un channel vocal');
+          };
+          ).catch(err => console.log(err))
       }
 })
 
@@ -45,7 +49,11 @@ client.on('message', msg => {
         msg.member.voiceChannel.join().then(connection => {
             const dispatcher = connection.playFile('music/xperror.mp3')
             dispatcher.on('end', end => msg.member.voiceChannel.leave());
-        }).catch(err => console.log(err))
+        })
+            else {
+            msg.reply('Pas sur un channel vocal');
+        };
+            .catch(err => console.log(err))
     }
 })
 
@@ -55,6 +63,9 @@ client.on('message', msg => {
             const dispatcher = connection.playFile('music/pornhub.mp3')
             dispatcher.on('end', end => msg.member.voiceChannel.leave());
         }).catch(err => console.log(err))
+        else {
+            msg.reply('Pas sur un channel vocal');
+        };
     }
 })
 
