@@ -32,30 +32,22 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
-    if (msg.content === '_okboomer') {
-          msg.member.voiceChannel.join().then(connection => {
-          const dispatcher = connection.playFile('music/ok.mp3')
-          dispatcher.on('end', end => msg.member.voiceChannel.leave());
-          } 
-           )else {
-              msg.reply('Pas sur un channel vocal');
-          };
-          ).catch(err => console.log(err))
-      }
+    if (msg.content === '_pornhub') {
+        msg.member.voiceChannel.join().then(connection => {
+            const dispatcher = connection.playFile('music/pornhub.mp3')
+            dispatcher.on('end', end => msg.member.voiceChannel.leave());
+        }).catch(err => console.log(err))
+    }
 })
-
 client.on('message', msg => {
     if (msg.content === '_xperror') {
         msg.member.voiceChannel.join().then(connection => {
             const dispatcher = connection.playFile('music/xperror.mp3')
             dispatcher.on('end', end => msg.member.voiceChannel.leave());
-        })
-            else {
-            msg.reply('Pas sur un channel vocal');
-        };
-            .catch(err => console.log(err))
+        }).catch(err => console.log(err))
     }
 })
+
 
 client.on('message', msg => {
     if (msg.content === '_pornhub') {
@@ -63,11 +55,8 @@ client.on('message', msg => {
             const dispatcher = connection.playFile('music/pornhub.mp3')
             dispatcher.on('end', end => msg.member.voiceChannel.leave());
         }).catch(err => console.log(err))
-        else {
-            msg.reply('Pas sur un channel vocal');
-        };
     }
-})
+});
 
 
     client.on('message', msg => {
@@ -77,8 +66,8 @@ client.on('message', msg => {
         } else {
           msg.reply('Erreur');
         };
-      }
-    });
+        };
+    })
 
 
 client.login(process.env.BOT_TOKEN)
