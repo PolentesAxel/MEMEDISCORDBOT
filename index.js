@@ -39,6 +39,7 @@ client.on('message', msg => {
         }).catch(err => console.log(err))
     }
 })
+
 client.on('message', msg => {
     if (msg.content === '_xperror') {
         msg.member.voiceChannel.join().then(connection => {
@@ -47,7 +48,6 @@ client.on('message', msg => {
         }).catch(err => console.log(err))
     }
 })
-
 
 client.on('message', msg => {
     if (msg.content === '_pornhub') {
@@ -59,15 +59,15 @@ client.on('message', msg => {
 });
 
 
-    client.on('message', msg => {
-      if (msg.content === '_dejoin') {
-        if (msg.member.voiceChannel) {
+client.on('message', msg => {
+   if (msg.content === '_dejoin') {
+      if (msg.member.voiceChannel) {
           msg.member.voiceChannel.leave()
-        } else {
+      } else {
           msg.reply('Erreur');
-        };
-        };
-    })
+      };
+    };
+})
 
 
 client.login(process.env.BOT_TOKEN)
