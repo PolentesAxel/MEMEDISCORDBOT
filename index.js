@@ -5,7 +5,6 @@ let request = require(`request`);
 let fs = require(`fs`);
 
 
-
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`)
     console.log('Je suis ok')
@@ -32,6 +31,20 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
+    if (msg.content === '_secret') {
+        const channel = client.channels.get("702146032447783022");
+        if (!channel) return console.error("The channel does not exist!");
+        channel.join().then(connection => {
+            // Yay, it worked!
+            console.log("Successfully connected.");
+        }).catch(e => {
+            // Oh no, it errored! Let's log it to console :)
+            console.error(e);
+        });
+    }
+});
+
+client.on('message', msg => {
     if (msg.content === '_okboomer') {
         msg.member.voiceChannel.join().then(connection => {
             const dispatcher = connection.playFile('music/ok.mp3')
@@ -39,6 +52,7 @@ client.on('message', msg => {
         }).catch(err => console.log(err))
     }
 })
+
 
 client.on('message', msg => {
     if (msg.content === '_xperror') {

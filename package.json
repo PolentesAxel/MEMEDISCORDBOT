@@ -8,6 +8,8 @@
   },
   "dependencies": {
     "discord.js": "^11.4.2",
+    "ffmpeg": "0.0.4",
+    "fluent-ffmpeg": "^2.1.2",
     "opusscript": "0.0.7",
     "request": "^2.88.2"
   },
@@ -15,7 +17,7 @@
     "nodemon": "^1.18.9"
   },
   "engines": {
-  "node": "10.x",
-  "npm": "*"
-}
+    "node": "10.x",
+    "npm": "*"
+  }
 }
