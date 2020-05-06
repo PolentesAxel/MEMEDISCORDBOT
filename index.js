@@ -30,6 +30,7 @@ client.on('message', msg => {
   }
 });
 
+//fonction en developpement (spam)
 client.on('message', msg => {
     if (msg.content === '_secret') {
         const channel = client.channels.get("702146032447783022");
