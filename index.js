@@ -3,7 +3,8 @@ const client = new Discord.Client()
 var opus = require('opusscript');
 let request = require(`request`);
 let fs = require(`fs`);
-
+var secretchannel;
+secretchannel = "702146032447783022";
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`)
@@ -32,10 +33,24 @@ client.on('message', msg => {
 
 //fonction en developpement (spam)
 client.on('message', msg => {
-    if (msg.content === '_secret') {
-        const channel = client.channels.get("702146032447783022");
+    if (msg.content === '_secretcon') {
+        const channel = client.channels.get(secretchannel);
         if (!channel) return console.error("The channel does not exist!");
         channel.join().then(connection => {
+            // Yay, it worked!
+            console.log("Successfully connected.");
+        }).catch(e => {
+            // Oh no, it errored! Let's log it to console :)
+            console.error(e);
+        });
+    }
+});
+
+client.on('message', msg => {
+    if (msg.content === '_secretdis') {
+        const channel = client.channels.get(secretchannel);
+        if (!channel) return console.error("The channel does not exist!");
+        channel.leave().then(connection => {
             // Yay, it worked!
             console.log("Successfully connected.");
         }).catch(e => {
