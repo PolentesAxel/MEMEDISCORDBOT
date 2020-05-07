@@ -63,6 +63,15 @@ client.on('message', msg => {
     }
 })
 
+client.on('message', msg => {
+    if (msg.content === '_issou') {
+        msg.member.voiceChannel.join().then(connection => {
+            const dispatcher = connection.playFile('music/issou.mp3')
+            dispatcher.on('end', end => msg.member.voiceChannel.leave());
+        }).catch(err => console.log(err))
+    }
+})
+
 
 client.on('message', msg => {
     if (msg.content === '_xperror') {
