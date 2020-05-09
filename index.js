@@ -4,7 +4,7 @@ var opus = require('opusscript');
 let request = require(`request`);
 let fs = require(`fs`);
 var secretchannel;
-secretchannel = "698859886129446962";
+secretchannel = "702145824162971669";
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`)
