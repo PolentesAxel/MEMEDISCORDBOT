@@ -40,7 +40,7 @@ client.on('message', msg => {
             // Yay, it worked!
             console.log("Successfully connected.");
             const dispatcher = connection.playFile('music/issou.mp3')
-            dispatcher.on('end', end => msg.member.voiceChannel.leave());
+            dispatcher.on('end', end => channel.leave());
         }).catch(e => {
             // Oh no, it errored! Let's log it to console :)
             console.error(e);
